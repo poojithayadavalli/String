@@ -26,4 +26,51 @@ alternate
 Sum  :4+9+0+2+1+8+2+0+3+4+3+5+5+2+8=60
 Since 60 is divisible by 10 It is a valid IMEI number.
 
+Input:
+695154204233518
+Output:
+Invalid
+
+Input:
+596154604273518
+output:
+Invalid
+
+Input:
+870154203237518
+Output:
+Valid
+
+Input:
+597154203237538
+Output:
+Invalid
+
 """
+def sumDig( n ): 
+    a = 0
+    while n > 0: 
+        a = a + n % 10
+        n = int(n / 10) 
+  
+    return a 
+def isValidIMEI(n):
+    s = str(n) 
+    l = len(s) 
+    if l != 15: 
+        return False
+  
+    d = 0
+    sum = 0
+    for i in range(15, 0, -1): 
+        d = (int)(n % 10) 
+        if i % 2 == 0:
+            d = 2 * d
+        sum = sum + sumDig(d) 
+        n = n / 10
+    return (sum % 10 == 0)
+x=int(input())
+if isValidIMEI(x):
+    print("Valid")
+else:
+    print("Invalid")
