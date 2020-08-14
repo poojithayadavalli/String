@@ -1,18 +1,21 @@
 """
 International Mobile Equipment Identity (IMEI) is a number, usually unique, to identify mobile phones, as well as some satellite phones.
 
-The task is to validate the IMEI number.
+The IMEI (15 decimal digits: 14 digits plus a check digit) includes information on the origin, model, and serial number of the device.
 
-The IMEI is validated in following steps:
+The task is to validate IMEI in following steps:
 
 1.Starting from the rightmost digit, double the value of every second digit (e.g., 7 becomes 14).
-
 2.If doubling of a number results in a two digits number i.e greater than 9(e.g., 7 × 2 = 14), then add the digits of the product 
 (e.g., 14: 1 + 4 = 5), to get a single digit number.
-
 3.Now take the sum of all the digits.
-
 4.Check if the sum is divisible by 10 i.e.(total modulo 10 is equal to 0) then the IMEI number is valid; else it is not valid.
+
+Input:
+Input contains the 14digit number
+
+Output:
+Print whether it is valid IMEI or not
 
 Example:
 Input:
